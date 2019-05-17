@@ -1,0 +1,18 @@
+<h2><%= @cocktail.name %></h2>
+
+Ingredient List:
+<ol>
+  <div class="d-flex flex-column">
+  <% @cocktail.doses.each do |dose| %>
+
+    <li><strong><%= dose.ingredient.name %></strong> - <%= dose.description %></li>
+    <%= link_to '(Delete)', cocktail_dose_path(dose), method: :delete %>
+  <% end %>
+  </div>
+</ol>
+
+<div class='flex-column'>
+  <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
+</div>
+
+<%= link_to 'Back', cocktails_path %>

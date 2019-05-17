@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1496318447583-f524534e9ce1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1405&q=80);">
+  <h1>Cocktails List</h1>
+  <p>Taste our cocktails, change your life!</p>
+</div>
+<div class="container">
+  <ul class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail do %>
+      <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1527271982979-83fea3eb3582?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);"> <%= cocktail.name %> </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <% link_to "Add Cocktail", new_cocktail_path %>
+</div>
+
